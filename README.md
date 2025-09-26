@@ -30,11 +30,36 @@ This repository stores practical security testing artifacts created during penet
 
 ```
 /                 <- repo root
-├─ Ian_Week_1_Report.pdf
-├─ Ian_Week_2_Report.pdf
-├─ Ian_Week_3_Report.pdf
-├─ SQL Injection.txt
-└─ lab3.txt
+├── README.md
+├── README-tests.md
+├── lab3.md
+├── SQL Injection.txt
+├── Ian_Week_1_Report.pdf
+├── Ian_Week_2_Report.pdf
+├── Ian_Week_3_Report.pdf
+├── reports/
+│   ├── README.md
+│   ├── <scan-folder-1>/
+│   │   ├── target.txt
+│   │   ├── scan-timestamp.txt
+│   │   ├── http-headers.txt
+│   │   ├── http-body-partial.html
+│   │   ├── nmap-top.nmap / .xml / .gnmap
+│   │   ├── nikto.txt           # optional, if nikto was run
+│   │   ├── sqlmap-guidance.txt
+│   │   ├── dir-listing.txt
+│   │   └── summary.txt
+│   └── artifacts/
+│       └── lab3/
+│           ├── screenshots/
+│           ├── burp-export.archive
+│           └── other evidence files
+├── scripts/
+│   ├── run-scan.sh
+│   ├── check-deps.sh
+│   └── summarize-reports.sh
+└── tests/  ← *proposed/future* (automated test scripts)
+
 ```
 
 ---
