@@ -1,0 +1,6 @@
+select * from student where u_name='admin' AND u_pass='human' or '1'='1'
+
+u_name='admin' and u_pass='human' or '1'='1'
+False AND False OR True
+False OR True
+True

